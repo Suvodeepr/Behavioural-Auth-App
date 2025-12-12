@@ -1,0 +1,83 @@
+import streamlit as st
+import joblib
+import numpy as np
+import pandas as pd
+
+# -----------------------------------------
+# LOAD MODEL, SCALER & SELECTED FEATURES
+# -----------------------------------------
+
+@st.cache_resource
+def load_all():
+    model = joblib.load("best_model_compressed.joblib")       # ML model
+    scaler = joblib.load("scaler.joblib")                     # StandardScaler
+    selected_features = joblib.load("selected_features.joblib")  # List of features
+    return model, scaler, selected_features
+
+model, scaler, selected_features = load_all()
+
+# -----------------------------------------
+# STREAMLIT PAGE UI
+# -----------------------------------------
+
+st.title("🔐 Behaviour-Based Authentication System")
+st.write(
+    """
+    This app predicts whether a user session is **Legitimate**, **Suspicious**,  
+    or **Malicious** using behavioural patterns.
+    """
+)
+
+st.subheader("Enter Feature Values Below")
+
+# -----------------------------------------
+# TAKE USER INPUT FOR EACH FEATURE
+# -----------------------------------------
+
+user_input = {}
+
+for feature in selected_features:
+    user_input[feature] = st.number_input(
+        f"{feature}", 
+        value=0.0, 
+        help="Enter numerical value for this feature"
+    )
+
+# Convert input to DataFrame
+input_df = pd.DataFrame([user_input])[selected_features]
+
+# Scale input data
+scaled_input = scaler.transform(input_df)
+
+# -----------------------------------------
+# PREDICTION BUTTON
+# -----------------------------------------
+
+if st.button("🔍 Predict Session Status"):
+    
+    # 1️⃣ Model prediction (0 = Normal, 1 = Anomaly)
+    prediction = model.predict(scaled_input)[0]
+
+    # 2️⃣ Probability of being malicious
+    prob_malicious = model.predict_proba(scaled_input)[0][1]
+
+    # 3️⃣ Convert probability → risk score (0–100)
+    risk_score = round(prob_malicious * 100, 2)
+
+    # 4️⃣ Assign risk label based on score
+    if risk_score <= 30:
+        label = "✔ Legitimate Session"
+        st.success(f"{label} — Risk Score: {risk_score}")
+    elif risk_score <= 70:
+        label = "⚠ Suspicious Behaviour"
+        st.warning(f"{label} — Risk Score: {risk_score}")
+    else:
+        label = "🚨 Malicious Session Detected!"
+        st.error(f"{label} — Risk Score: {risk_score}")
+
+    # Show additional details
+    st.write("### 🔎 Prediction Details")
+    st.write(f"**Model Output:** {'Malicious' if prediction == 1 else 'Normal'}")
+    st.write(f"**Risk Score (0–100):** {risk_score}")
+    st.write(f"**Raw Probability:** {prob_malicious}")
+
