@@ -30,7 +30,8 @@ The model outputs:
 ## 🧠 Machine Learning Models
 
 - Logistic Regression  
-- Random Forest Classifier  
+- Random Forest Classifier
+- Naive Bayes
 
 The final model is selected based on **F1-score and Recall**, ensuring better detection of malicious sessions.
 
