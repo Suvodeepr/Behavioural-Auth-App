@@ -67,7 +67,7 @@ if st.button("🔍 Predict Session Status"):
         label = "Legitimate Session"
         st.success(f"{decision} — {label} | Risk Score: {risk_score}")
 
-    elif risk_score <= 80:
+    elif risk_score <= 70:
         decision = "⚠ ALERT SESSION"
         label = "Suspicious Behaviour"
         st.warning(f"{decision} — {label} | Risk Score: {risk_score}")
@@ -81,6 +81,7 @@ if st.button("🔍 Predict Session Status"):
     st.write("### 🔎 Prediction Details")
     st.write(f"**Risk Score (0–100):** {risk_score}")
     st.write(f"**Raw Probability:** {prob_malicious}")
+
 
 
 
