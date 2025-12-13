@@ -65,12 +65,12 @@ if st.button("🔍 Predict Session Status"):
     risk_score = round(prob_malicious * 100, 2)
 
     # 4️⃣ Risk-based decision logic
-if risk_score <= 30:
+if risk_score <= 50:
     decision = "✅ ALLOW SESSION"
     label = "Legitimate Session"
     st.success(f"{decision} — {label} | Risk Score: {risk_score}")
 
-elif risk_score <= 70:
+elif risk_score <= 75:
     decision = "⚠ ALERT SESSION"
     label = "Suspicious Behaviour"
     st.warning(f"{decision} — {label} | Risk Score: {risk_score}")
@@ -86,4 +86,5 @@ else:
     st.write(f"**Model Output:** {'Malicious' if prediction == 1 else 'Normal'}")
     st.write(f"**Risk Score (0–100):** {risk_score}")
     st.write(f"**Raw Probability:** {prob_malicious}")
+
 
