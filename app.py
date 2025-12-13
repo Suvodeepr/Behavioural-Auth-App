@@ -55,6 +55,12 @@ scaled_input = scaler.transform(input_df)
 
 if st.button("🔍 Predict Session Status"):
 
+
+    # Check if all inputs are zero
+    if all(value == 0 for value in user_input.values()):
+        st.warning("⚠ Please enter feature values before prediction.")
+        st.stop()
+
     # Probability of malicious behaviour
     prob_malicious = model.predict_proba(scaled_input)[0][1]
 
@@ -81,6 +87,7 @@ if st.button("🔍 Predict Session Status"):
     st.write("### 🔎 Prediction Details")
     st.write(f"**Risk Score (0–100):** {risk_score}")
     st.write(f"**Raw Probability:** {prob_malicious}")
+
 
 
 
