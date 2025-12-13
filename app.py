@@ -64,16 +64,22 @@ if st.button("🔍 Predict Session Status"):
     # 3️⃣ Convert probability → risk score (0–100)
     risk_score = round(prob_malicious * 100, 2)
 
-    # 4️⃣ Assign risk label based on score
-    if risk_score <= 30:
-        label = "✔ Legitimate Session"
-        st.success(f"{label} — Risk Score: {risk_score}")
-    elif risk_score <= 70:
-        label = "⚠ Suspicious Behaviour"
-        st.warning(f"{label} — Risk Score: {risk_score}")
-    else:
-        label = "🚨 Malicious Session Detected!"
-        st.error(f"{label} — Risk Score: {risk_score}")
+    # 4️⃣ Risk-based decision logic
+if risk_score <= 30:
+    decision = "✅ ALLOW SESSION"
+    label = "Legitimate Session"
+    st.success(f"{decision} — {label} | Risk Score: {risk_score}")
+
+elif risk_score <= 70:
+    decision = "⚠ ALERT SESSION"
+    label = "Suspicious Behaviour"
+    st.warning(f"{decision} — {label} | Risk Score: {risk_score}")
+
+else:
+    decision = "🚨 BLOCK SESSION"
+    label = "Malicious Session"
+    st.error(f"{decision} — {label} | Risk Score: {risk_score}")
+
 
     # Show additional details
     st.write("### 🔎 Prediction Details")
