@@ -54,36 +54,31 @@ scaled_input = scaler.transform(input_df)
 # -----------------------------------------
 
 if st.button("🔍 Predict Session Status"):
-    
-    # 1️⃣ Model prediction (0 = Normal, 1 = Anomaly)
-    prediction = model.predict(scaled_input)[0]
 
-    # 2️⃣ Probability of being malicious
+    # Probability of malicious behaviour
     prob_malicious = model.predict_proba(scaled_input)[0][1]
 
-    # 3️⃣ Convert probability → risk score (0–100)
+    # Convert probability → risk score
     risk_score = round(prob_malicious * 100, 2)
 
-    # 4️⃣ Risk-based decision logic
-if risk_score <= 50:
-    decision = "✅ ALLOW SESSION"
-    label = "Legitimate Session"
-    st.success(f"{decision} — {label} | Risk Score: {risk_score}")
+    # Risk-based decision logic
+    if risk_score <= 50:
+        decision = "✅ ALLOW SESSION"
+        label = "Legitimate Session"
+        st.success(f"{decision} — {label} | Risk Score: {risk_score}")
 
-elif risk_score <= 75:
-    decision = "⚠ ALERT SESSION"
-    label = "Suspicious Behaviour"
-    st.warning(f"{decision} — {label} | Risk Score: {risk_score}")
+    elif risk_score <= 75:
+        decision = "⚠ ALERT SESSION"
+        label = "Suspicious Behaviour"
+        st.warning(f"{decision} — {label} | Risk Score: {risk_score}")
 
-else:
-    decision = "🚨 BLOCK SESSION"
-    label = "Malicious Session"
-    st.error(f"{decision} — {label} | Risk Score: {risk_score}")
+    else:
+        decision = "🚨 BLOCK SESSION"
+        label = "Malicious Session"
+        st.error(f"{decision} — {label} | Risk Score: {risk_score}")
 
-
-    # Show additional details
+    # Technical details (optional)
     st.write("### 🔎 Prediction Details")
-    st.write(f"**Model Output:** {'Malicious' if prediction == 1 else 'Normal'}")
     st.write(f"**Risk Score (0–100):** {risk_score}")
     st.write(f"**Raw Probability:** {prob_malicious}")
 
