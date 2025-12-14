@@ -1,4 +1,4 @@
-🔐 Behaviour-Based Authentication System
+<img width="380" height="517" alt="image" src="https://github.com/user-attachments/assets/0bfc608b-d5f6-4f6b-b499-c86ea264e18a" />🔐 Behaviour-Based Authentication System
 
 This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
 
@@ -16,6 +16,17 @@ Traditional login systems depend only on usernames and passwords.
 This project improves security by analyzing how users behave during a session.
 
 It continuously checks behavior patterns such as mouse speed, typing speed, and scrolling activity to detect abnormal or malicious sessions.
+
+## 🌐 Live Demo
+
+🔗 **Streamlit App:**  
+https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
+
+📽 **Demo Video (optional):**  
+
+<img width="380" height="517" alt="Screenshot 2025-12-14 201808" src="https://github.com/user-attachments/assets/07b07d11-2708-4717-a231-57386d1e6db4" />
+
+
 
 ## 💡 Why This Project?
 
