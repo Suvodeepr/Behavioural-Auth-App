@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/731d64cb-2a6b-44d0-8d5d-b265be49bc32
 
 
 
-## 💡 Why This Pr
+## 💡 Why This Project ?
 
 Password-based authentication alone is **not enough** to prevent attacks such as:
 - Account takeover  
