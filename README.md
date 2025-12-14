@@ -1,68 +1,183 @@
-# 🔐 Behaviour-Based Authentication System
+🔐 Behaviour-Based Authentication System
 
-This project implements a **behaviour-based authentication and malicious session detection system** using machine learning.  
-It analyzes user session behavior and assigns a **continuous risk score** to classify sessions as **Legitimate**, **Suspicious**, or **Malicious**.
+This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
 
----
+It assigns a risk score (0–100) to each session and classifies it as:
 
-## 📌 Project Overview
+Legitimate
 
-Traditional authentication systems rely on static credentials.  
-This system enhances security by continuously monitoring **behavioral patterns** such as session activity and interaction features to detect anomalies in real time.
+Suspicious
 
-The model outputs:
-- A **binary prediction** (Normal / Anomalous)
-- A **risk score (0–100)**
-- A **risk label** based on severity
+Malicious
 
----
+📌 Project Overview
 
-## ⚙️ Technologies Used
+Traditional login systems depend only on usernames and passwords.
+This project improves security by analyzing how users behave during a session.
 
-- Python  
-- Streamlit (Web Application)  
-- Scikit-learn (Machine Learning)  
-- Pandas & NumPy (Data Processing)  
-- Joblib (Model Serialization)
+It continuously checks behavior patterns such as mouse speed, typing speed, and scrolling activity to detect abnormal or malicious sessions.
 
----
+## 💡 Why This Project?
 
-## 🧠 Machine Learning Models
+Password-based authentication alone is not enough to prevent attacks such as
+account takeover, session hijacking, and automated bots.
 
-- Logistic Regression  
-- Random Forest Classifier
-- Naive Bayes
+This project adds an extra security layer by analyzing user behavior during a session,
+making authentication smarter and more secure.
 
-The final model is selected based on **F1-score and Recall**, ensuring better detection of malicious sessions.
+Clarify Binary vs Risk-Based Output:- 
+The model internally predicts whether a session is anomalous (0 or 1),
+but the final output shown to the user is a risk score and risk label.
 
----
 
-## 📊 Risk Scoring Logic
 
-| Risk Score Range | Risk Label |
-|------------------|------------|
-| 0 – 30 | Legitimate |
-| 31 – 70 | Suspicious |
-| 71 – 100 | Malicious |
+🔍 What This System Does
 
-This allows **fine-grained, continuous behavioral analysis** instead of simple binary decisions.
+For every user session, the system:
 
----
+Extracts behavioral features
 
-## 🚀 Deployment
+Uses a trained ML model to predict anomaly probability
 
-The application is deployed using **Streamlit Cloud** and hosted via **GitHub**.
+Converts probability into a risk score (0–100)
 
-**Live App:**  
-👉 *Add your Streamlit app URL here*
+Assigns a risk label based on that score
 
----
+⚙️ Technologies Used
 
-## ▶️ How to Run Locally
+Python
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/behaviour-authentication-system.git
-   cd behaviour-authentication-system
+Streamlit – Web application
+
+Scikit-learn – Machine learning models
+
+Pandas & NumPy – Data processing
+
+Joblib – Saving and loading trained models
+
+🧠 Machine Learning Models Used
+
+Logistic Regression
+
+Random Forest Classifier
+
+The best model is selected automatically based on F1-score, which balances false positives and false negatives.
+
+“Model Selection Logic”:- 
+The final model is chosen automatically based on the highest F1-score
+to ensure balanced detection of malicious sessions.
+
+
+📁 Project Structure:-
+
+behaviour-authentication-system/
+│
+├── synthetic_sessions_r.csv
+│ → Original dataset used for training
+│
+├── updated_sessions_with_risk_level.csv
+│ → Dataset with risk score and risk label added
+│
+├── model_training.ipynb
+│ → Google Colab notebook
+│ → Used for data preprocessing, feature selection,
+│ model training, evaluation, and saving models
+│
+├── best_model_compressed.joblib
+│ → Trained machine learning model (Logistic Regression or Random Forest)
+│
+├── scaler.joblib
+│ → StandardScaler used to scale input data
+│
+├── selected_features.joblib
+│ → List of features used by the model
+│
+├── app.py
+│ → Streamlit web application file
+│ → Takes user input and predicts session risk
+│
+├── requirements.txt
+│ → Required Python libraries
+│
+└── README.md
+│ → Project documentation
+
+🎯 Feature Selection
+
+Important features are selected using Random Forest Feature Importance, which helps:
+
+Remove unnecessary features
+
+Improve model accuracy
+
+Reduce noise in prediction
+
+Only the most influential features are used in the final model.
+
+📊 Risk Scoring Logic (MATCHES YOUR CODE ✅)
+Risk Score	Session Type
+0 – 50	Legitimate
+51 – 55	Suspicious
+56 – 100	Malicious
+
+This allows continuous and fine-grained security decisions instead of simple yes/no output.
+
+🧪 Features Used for Prediction
+
+The Streamlit UI accepts the following features:
+
+Mouse Average Speed
+
+Latitude
+
+Longitude
+
+Typing Speed (characters per second)
+
+Cluster ID
+
+Scroll Speed
+
+These features are scaled using the same scaler used during training.
+
+📈 Model Evaluation
+
+The model is evaluated using:
+
+Confusion Matrix – shows correct and wrong predictions
+
+ROC Curve & AUC – shows how well the model separates normal vs malicious sessions
+
+Risk Score Distribution – shows how risk scores are spread across sessions
+
+🚀 Web Application (Streamlit)
+
+The Streamlit app:
+
+Takes user input for selected features
+
+Scales the input
+
+Predicts risk score
+
+Displays session status in real time
+
+Output Example:
+
+✅ Legitimate (Low Risk)
+
+⚠️ Suspicious (Medium Risk)
+
+🚨 Malicious (High Risk)
+
+▶️ How to Run Locally:- 
+
+1️⃣ Clone the Repository
+git clone https://github.com/your-username/behaviour-authentication-system.git
+cd behaviour-authentication-system
+
+2️⃣ Install Dependencies
 pip install -r requirements.txt
+
+3️⃣ Run the Streamlit App
 streamlit run app.py
