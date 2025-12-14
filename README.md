@@ -34,11 +34,19 @@ https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 <img width="380" height="517" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
 
 📽 **Demo Video:**  
-👉 https://github.com/Suvodeepr/Behavioural-Auth-App/blob/main/DEMO%20VIDEO%20FOR%20BEHAVIOUR%20AUTHENTICATION%20SYSTEM%20FOR%20MALICIOUS%20SESSION.mp4.bz2
+👉 
 
 ---
 
-## 💡 Why This Project?
+## 💡 Why This Pr
+
+https://github.com/user-attachments/assets/486b4050-b2d5-425f-9a67-6bff0bab371c
+
+
+
+https://github.com/user-attachments/assets/9f32e095-b0b6-471b-a5a6-aede461b7c4e
+
+oject?
 
 Password-based authentication alone is **not enough** to prevent attacks such as:
 - Account takeover  
