@@ -70,37 +70,14 @@ to ensure balanced detection of malicious sessions.
 
 📁 Project Structure:-
 
-behaviour-authentication-system/
-│
-├── synthetic_sessions_r.csv
-│ → Original dataset used for training
-│
-├── updated_sessions_with_risk_level.csv
-│ → Dataset with risk score and risk label added
-│
-├── model_training.ipynb
-│ → Google Colab notebook
-│ → Used for data preprocessing, feature selection,
-│ model training, evaluation, and saving models
-│
+├── app.py                  # Streamlit web app
 ├── best_model_compressed.joblib
-│ → Trained machine learning model (Logistic Regression or Random Forest)
-│
 ├── scaler.joblib
-│ → StandardScaler used to scale input data
-│
 ├── selected_features.joblib
-│ → List of features used by the model
-│
-├── app.py
-│ → Streamlit web application file
-│ → Takes user input and predicts session risk
-│
+├── synthetic_sessions_r.csv
 ├── requirements.txt
-│ → Required Python libraries
-│
 └── README.md
-│ → Project documentation
+
 
 🎯 Feature Selection
 
