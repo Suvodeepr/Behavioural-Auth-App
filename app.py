@@ -1,5 +1,8 @@
+# Import Streamlit → used to build the web UI
 import streamlit as st
+# Import joblib → used to load saved ML model and scaler files
 import joblib
+# Import pandas → used to create DataFrame from user input
 import pandas as pd
 
 # -----------------------------------------
@@ -76,4 +79,5 @@ if st.button("🔍 Predict Session Status"):
     st.write("### 🔎 Prediction Details")
     st.write(f"**Risk Score (0–100):** {risk_score}")
     st.write(f"**Raw Probability:** {prob_malicious}")
+
 
