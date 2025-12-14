@@ -1,4 +1,3 @@
-<img width="380" height="517" alt="image" src="https://github.com/user-attachments/assets/0bfc608b-d5f6-4f6b-b499-c86ea264e18a" />🔐 Behaviour-Based Authentication System
 
 This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
 
