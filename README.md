@@ -151,7 +151,7 @@ Output Examples
 
 ▶️ How to Run Locally
 1️⃣ Clone the Repository
-git clone https://github.com/Suvodeepr/Behavioural-Auth-App
+[git clone https://github.com/Suvodeepr/Behavioural-Auth-App](https://github.com/Suvodeepr/Behavioural-Auth-App.git)
 then type in cmd cd behaviour-authentication-system
 
 2️⃣ Install Dependencies
