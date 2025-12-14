@@ -70,13 +70,13 @@ to ensure balanced detection of malicious sessions.
 
 📁 Project Structure:-
 
-├── app.py                  # Streamlit web app
-├── best_model_compressed.joblib
-├── scaler.joblib
-├── selected_features.joblib
-├── synthetic_sessions_r.csv
-├── requirements.txt
-└── README.md
+ app.py                  # Streamlit web app
+ best_model_compressed.joblib
+ scaler.joblib
+ selected_features.joblib
+ synthetic_sessions_r.csv
+ requirements.txt
+ README.md
 
 
 🎯 Feature Selection
