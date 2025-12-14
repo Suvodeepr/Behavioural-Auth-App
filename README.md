@@ -21,9 +21,10 @@ It continuously checks behavior patterns such as mouse speed, typing speed, and 
 🔗 **Streamlit App:**  
 https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 
-📽 **Demo Video (optional):**  
+📽 **Demo SCREENSHOT (optional):**  
 
-<img width="380" height="517" alt="Screenshot 2025-12-14 201808" src="https://github.com/user-attachments/assets/07b07d11-2708-4717-a231-57386d1e6db4" />
+<img width="380" height="517" alt="Screenshot 2025-12-14 201808" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
+
 
 
 
