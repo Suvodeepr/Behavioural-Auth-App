@@ -152,7 +152,7 @@ Output Examples
 ▶️ How to Run Locally
 1️⃣ Clone the Repository
 git clone https://github.com/Suvodeepr/Behavioural-Auth-App
-cd behaviour-authentication-system
+then type in cmd cd behaviour-authentication-system
 
 2️⃣ Install Dependencies
 pip install -r requirements.txt
