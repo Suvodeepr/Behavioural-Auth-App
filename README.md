@@ -1,166 +1,161 @@
-# 🔐 Behaviour-Based Authentication System
+🔐 Behaviour-Based Authentication System
 
-This project is a **machine learning–based security system** that detects malicious user sessions using **behavioral data** instead of only passwords.
+This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
 
-It assigns a **risk score (0–100)** to each session and classifies it as:
+It assigns a risk score (0–100) to each session and classifies it as:
 
-- ✅ Legitimate  
-- ⚠️ Suspicious  
-- 🚨 Malicious  
+✅ Legitimate
 
----
+⚠️ Suspicious
 
-## 📌 Project Overview
+🚨 Malicious
 
-Traditional login systems depend only on usernames and passwords.  
-This project improves security by analyzing **how users behave during a session**.
+📌 Project Overview
+
+Traditional login systems depend only on usernames and passwords.
+This project improves security by analyzing how users behave during a session.
 
 It continuously monitors behavior such as:
-- Mouse movement speed  
-- Typing speed  
-- Scrolling activity  
+
+Mouse movement speed
+
+Typing speed
+
+Scrolling activity
 
 to detect abnormal or malicious sessions.
 
----
+🌐 Live Demo
 
-## 🌐 Live Demo
-
-🔗 **Streamlit App:**  
+🔗 Streamlit App:
 https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 
-📸 **UI Screenshot:**  
+📸 UI Screenshot:
 
 <img width="380" height="517" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
 
-📽 **Demo Video:**  
-👉    
-
+📽 Demo Video:
 https://github.com/user-attachments/assets/731d64cb-2a6b-44d0-8d5d-b265be49bc32
 
+💡 Why This Project?
 
+Password-based authentication alone is not enough to prevent attacks such as:
 
+Account takeover
 
-## 💡 Why This Project ?
+Session hijacking
 
-Password-based authentication alone is **not enough** to prevent attacks such as:
-- Account takeover  
-- Session hijacking  
-- Automated bots  
+Automated bots
 
-This project adds an **extra security layer** by analyzing user behavior during a session.
+This project adds an extra security layer by analyzing user behavior during a session.
 
----
-
-## 🔍 What This System Does
+🔍 What This System Does
 
 For every user session, the system:
 
-- Extracts behavioral features  
-- Uses a trained ML model to predict anomaly probability  
-- Converts probability into a **risk score (0–100)**  
-- Assigns a **risk label** based on severity  
+Extracts behavioral features
 
----
+Uses a trained ML model to predict anomaly probability
 
-## ⚙️ Technologies Used
+Converts probability into a risk score (0–100)
 
-- Python  
-- Streamlit – Web application  
-- Scikit-learn – Machine learning  
-- Pandas & NumPy – Data processing  
-- Joblib – Model saving & loading  
+Assigns a risk label based on severity
 
----
+⚙️ Technologies Used
 
-## 🧠 Machine Learning Models Used
+Python
 
-- Logistic Regression  
-- Random Forest Classifier  
+Streamlit – Web application
 
-The **best model is selected automatically** based on **F1-score**, ensuring balanced detection of malicious sessions.
+Scikit-learn – Machine learning
 
----
+Pandas & NumPy – Data processing
 
-## 🎯 Feature Selection
+Joblib – Model saving & loading
 
-Important features are selected using **Random Forest Feature Importance**, which helps to:
+🧠 Machine Learning Models Used
 
-- Remove unnecessary features  
-- Improve model accuracy  
-- Reduce noise in prediction  
+Logistic Regression
 
-Only the **most influential features** are used in the final model.
+Random Forest Classifier
 
----
+The best model is selected automatically based on F1-score, ensuring balanced detection of malicious sessions.
 
-## 📊 Risk Scoring Logic
+🎯 Feature Selection
 
-| Risk Score | Session Type |
-|-----------|--------------|
-| 0 – 50 | Legitimate |
-| 51 – 55 | Suspicious |
-| 56 – 100 | Malicious |
+Important features are selected using Random Forest Feature Importance, which helps to:
 
-This allows **continuous and fine-grained security decisions** instead of simple yes/no output.
+Remove unnecessary features
 
----
+Improve model accuracy
 
-## 🧪 Features Used for Prediction
+Reduce noise in prediction
+
+Only the most influential features are used in the final model.
+
+📊 Risk Scoring Logic
+Risk Score	Session Type
+0 – 50	Legitimate
+51 – 55	Suspicious
+56 – 100	Malicious
+
+This allows continuous and fine-grained security decisions instead of simple yes/no output.
+
+🧪 Features Used for Prediction
 
 The Streamlit UI accepts the following features:
 
-- Mouse Average Speed  
-- Latitude  
-- Longitude  
-- Typing Speed (characters per second)  
-- Cluster ID  
-- Scroll Speed  
+Mouse Average Speed
 
-These features are scaled using the **same scaler used during training**.
+Latitude
 
----
+Longitude
 
-## 📈 Model Evaluation
+Typing Speed (characters per second)
+
+Cluster ID
+
+Scroll Speed
+
+These features are scaled using the same scaler used during training.
+
+📈 Model Evaluation
 
 The model is evaluated using:
 
-- **Confusion Matrix** – correct vs incorrect predictions  
-- **ROC Curve & AUC** – separation ability  
-- **Risk Score Distribution** – score spread  
+Confusion Matrix – correct vs incorrect predictions
 
----
+ROC Curve & AUC – separation ability
 
-## 🚀 Web Application (Streamlit)
+Risk Score Distribution – score spread
+
+🚀 Web Application (Streamlit)
 
 The Streamlit app:
 
-- Takes user input  
-- Scales input features  
-- Predicts risk score  
-- Displays session status in real time  
+Takes user input
 
-### Output Examples:
-- ✅ Legitimate (Low Risk)  
-- ⚠️ Suspicious (Medium Risk)  
-- 🚨 Malicious (High Risk)  
+Scales input features
 
----
+Predicts risk score
 
-## ▶️ How to Run Locally
+Displays session status in real time
 
-### 1️⃣ Clone the Repository
-```bash
+Output Examples
+
+✅ Legitimate (Low Risk)
+
+⚠️ Suspicious (Medium Risk)
+
+🚨 Malicious (High Risk)
+
+▶️ How to Run Locally
+1️⃣ Clone the Repository
 git clone https://github.com/your-username/behaviour-authentication-system.git
 cd behaviour-authentication-system
 
 2️⃣ Install Dependencies
-
- pip install -r requirements.txt
-
+pip install -r requirements.txt
 
 3️⃣ Run the Streamlit App
-
- streamlit run app.py
-
-
+streamlit run app.py
