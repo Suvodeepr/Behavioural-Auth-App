@@ -150,3 +150,10 @@ The Streamlit app:
 ```bash
 git clone https://github.com/your-username/behaviour-authentication-system.git
 cd behaviour-authentication-system
+
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+
+3️⃣ Run the Streamlit App
+streamlit run app.py
+
