@@ -1,165 +1,152 @@
-🔐 Behaviour-Based Authentication System
-This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
+# 🔐 Behaviour-Based Authentication System
 
-It assigns a risk score (0–100) to each session and classifies it as:
+This project is a **machine learning–based security system** that detects malicious user sessions using **behavioral data** instead of only passwords.
 
-Legitimate
+It assigns a **risk score (0–100)** to each session and classifies it as:
 
-Suspicious
+- ✅ Legitimate  
+- ⚠️ Suspicious  
+- 🚨 Malicious  
 
-Malicious
+---
 
-📌 Project Overview
+## 📌 Project Overview
 
-Traditional login systems depend only on usernames and passwords.
-This project improves security by analyzing how users behave during a session.
+Traditional login systems depend only on usernames and passwords.  
+This project improves security by analyzing **how users behave during a session**.
 
-It continuously checks behavior patterns such as mouse speed, typing speed, and scrolling activity to detect abnormal or malicious sessions.
+It continuously monitors behavior such as:
+- Mouse movement speed  
+- Typing speed  
+- Scrolling activity  
+
+to detect abnormal or malicious sessions.
+
+---
 
 ## 🌐 Live Demo
 
 🔗 **Streamlit App:**  
 https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 
-📽 **Demo SCREENSHOT :**  
+📸 **UI Screenshot:**  
 
-<img width="380" height="517" alt="Screenshot 2025-12-14 201808" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
+<img width="380" height="517" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
 
-DEMO VIDEO :- 
+📽 **Demo Video:**  
+👉 *(Upload `.mp4` directly to GitHub and paste link here)*
 
-https://github.com/Suvodeepr/Behavioural-Auth-App/blob/main/DEMO%20VIDEO%20FOR%20BEHAVIOUR%20AUTHENTICATION%20SYSTEM%20FOR%20MALICIOUS%20SESSION.mp4.bz2
-
-
+---
 
 ## 💡 Why This Project?
 
-Password-based authentication alone is not enough to prevent attacks such as
-account takeover, session hijacking, and automated bots.
+Password-based authentication alone is **not enough** to prevent attacks such as:
+- Account takeover  
+- Session hijacking  
+- Automated bots  
 
-This project adds an extra security layer by analyzing user behavior during a session,
-making authentication smarter and more secure.
+This project adds an **extra security layer** by analyzing user behavior during a session.
 
-Clarify Binary vs Risk-Based Output:- 
-The model internally predicts whether a session is anomalous (0 or 1),
-but the final output shown to the user is a risk score and risk label.
+---
 
-
-
-🔍 What This System Does
+## 🔍 What This System Does
 
 For every user session, the system:
 
-Extracts behavioral features
+- Extracts behavioral features  
+- Uses a trained ML model to predict anomaly probability  
+- Converts probability into a **risk score (0–100)**  
+- Assigns a **risk label** based on severity  
 
-Uses a trained ML model to predict anomaly probability
+---
 
-Converts probability into a risk score (0–100)
+## ⚙️ Technologies Used
 
-Assigns a risk label based on that score
+- Python  
+- Streamlit – Web application  
+- Scikit-learn – Machine learning  
+- Pandas & NumPy – Data processing  
+- Joblib – Model saving & loading  
 
-⚙️ Technologies Used
+---
 
-Python
+## 🧠 Machine Learning Models Used
 
-Streamlit – Web application
+- Logistic Regression  
+- Random Forest Classifier  
 
-Scikit-learn – Machine learning models
+The **best model is selected automatically** based on **F1-score**, ensuring balanced detection of malicious sessions.
 
-Pandas & NumPy – Data processing
+---
 
-Joblib – Saving and loading trained models
+## 🎯 Feature Selection
 
-🧠 Machine Learning Models Used
+Important features are selected using **Random Forest Feature Importance**, which helps to:
 
-Logistic Regression
+- Remove unnecessary features  
+- Improve model accuracy  
+- Reduce noise in prediction  
 
-Random Forest Classifier
+Only the **most influential features** are used in the final model.
 
-The best model is selected automatically based on F1-score, which balances false positives and false negatives.
+---
 
-“Model Selection Logic”:- 
-The final model is chosen automatically based on the highest F1-score
-to ensure balanced detection of malicious sessions.
+## 📊 Risk Scoring Logic
 
+| Risk Score | Session Type |
+|-----------|--------------|
+| 0 – 50 | Legitimate |
+| 51 – 55 | Suspicious |
+| 56 – 100 | Malicious |
 
+This allows **continuous and fine-grained security decisions** instead of simple yes/no output.
 
+---
 
-🎯 Feature Selection
-
-Important features are selected using Random Forest Feature Importance, which helps:
-
-Remove unnecessary features
-
-Improve model accuracy
-
-Reduce noise in prediction
-
-Only the most influential features are used in the final model.
-
-📊 Risk Scoring Logic (MATCHES YOUR CODE ✅)
-Risk Score	Session Type
-0 – 50	Legitimate
-51 – 55	Suspicious
-56 – 100	Malicious
-
-This allows continuous and fine-grained security decisions instead of simple yes/no output.
-
-🧪 Features Used for Prediction
+## 🧪 Features Used for Prediction
 
 The Streamlit UI accepts the following features:
 
-Mouse Average Speed
+- Mouse Average Speed  
+- Latitude  
+- Longitude  
+- Typing Speed (characters per second)  
+- Cluster ID  
+- Scroll Speed  
 
-Latitude
+These features are scaled using the **same scaler used during training**.
 
-Longitude
+---
 
-Typing Speed (characters per second)
-
-Cluster ID
-
-Scroll Speed
-
-These features are scaled using the same scaler used during training.
-
-📈 Model Evaluation
+## 📈 Model Evaluation
 
 The model is evaluated using:
 
-Confusion Matrix – shows correct and wrong predictions
+- **Confusion Matrix** – correct vs incorrect predictions  
+- **ROC Curve & AUC** – separation ability  
+- **Risk Score Distribution** – score spread  
 
-ROC Curve & AUC – shows how well the model separates normal vs malicious sessions
+---
 
-Risk Score Distribution – shows how risk scores are spread across sessions
-
-🚀 Web Application (Streamlit)
+## 🚀 Web Application (Streamlit)
 
 The Streamlit app:
 
-Takes user input for selected features
+- Takes user input  
+- Scales input features  
+- Predicts risk score  
+- Displays session status in real time  
 
-Scales the input
+### Output Examples:
+- ✅ Legitimate (Low Risk)  
+- ⚠️ Suspicious (Medium Risk)  
+- 🚨 Malicious (High Risk)  
 
-Predicts risk score
+---
 
-Displays session status in real time
+## ▶️ How to Run Locally
 
-Output Example:
-
-✅ Legitimate (Low Risk)
-
-⚠️ Suspicious (Medium Risk)
-
-🚨 Malicious (High Risk)
-
-▶️ How to Run Locally:- 
-
-1️⃣ Clone the Repository
+### 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/your-username/behaviour-authentication-system.git
 cd behaviour-authentication-system
-
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-
-3️⃣ Run the Streamlit App
-streamlit run app.py
