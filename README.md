@@ -149,13 +149,72 @@ Output Examples
 
 🚨 Malicious (High Risk)
 
-▶️ How to Run Locally
-1️⃣ Clone the Repository
-[git clone https://github.com/Suvodeepr/Behavioural-Auth-App](https://github.com/Suvodeepr/Behavioural-Auth-App.git)
-then type in cmd cd behaviour-authentication-system
+▶️ How to Run This Project on Your Own Computer (Step by Step)
 
-2️⃣ Install Dependencies
+🔹 Step 1: Install Required Software (One Time Only)
+
+Before starting, make sure these are installed on your computer:
+
+Python (version 3.8 or higher)
+👉 Download from: https://www.python.org/downloads/
+
+Git (used to download the project from GitHub)
+👉 Download from: https://git-scm.com/downloads
+
+After installation, restart your computer once.
+
+🔹 Step 2: Clone (Download) the Project from GitHub
+
+Cloning means downloading the full project from GitHub to your computer.
+
+Open Command Prompt (Windows) or Terminal (Mac/Linux)
+
+Copy and paste the command below, then press Enter:
+
+git clone https://github.com/Suvodeepr/Behavioural-Auth-App.git
+
+
+This will create a folder named Behavioural-Auth-App on your computer.
+
+🔹 Step 3: Go Inside the Project Folder
+
+After cloning, you must move into the project folder.
+
+In the same terminal / command prompt, type:
+
+cd Behavioural-Auth-App
+
+
+Now you are inside the project directory.
+
+🔹 Step 4: Install Required Python Libraries (Dependencies)
+
+The project needs some Python libraries to run (Streamlit, Scikit-learn, etc.).
+
+Run this command:
+
 pip install -r requirements.txt
 
-3️⃣ Run the Streamlit App
-streamlit run app.py
+
+This will automatically install all required libraries listed in requirements.txt.
+
+⏳ This may take a few minutes the first time.
+
+🔹 Step 5: Run the Streamlit Web Application
+
+After successful installation, start the app by running:
+
+streamlit run app.py in cmd
+
+🔹 Step 6: Open the App in Your Browser
+
+A browser window will open automatically
+
+If not, copy the local URL shown in the terminal, usually:
+
+http://localhost:8501
+
+
+Paste it into your browser and press Enter.
+
+🎉 The Behaviour-Based Authentication System is now running on your computer!
