@@ -1,4 +1,4 @@
-
+🔐 Behaviour-Based Authentication System
 This project is a machine learning–based security system that detects malicious user sessions using behavioral data instead of only passwords.
 
 It assigns a risk score (0–100) to each session and classifies it as:
