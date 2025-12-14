@@ -34,7 +34,7 @@ https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 <img width="380" height="517" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
 
 📽 **Demo Video:**  
-👉 *(Upload `.mp4` directly to GitHub and paste link here)*
+👉 https://github.com/Suvodeepr/Behavioural-Auth-App/blob/main/DEMO%20VIDEO%20FOR%20BEHAVIOUR%20AUTHENTICATION%20SYSTEM%20FOR%20MALICIOUS%20SESSION.mp4.bz2
 
 ---
 
