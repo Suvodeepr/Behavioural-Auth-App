@@ -25,6 +25,9 @@ https://behavioural-app-app-hbutiypvisspj3pjjk2jij.streamlit.app/
 
 <img width="380" height="517" alt="Screenshot 2025-12-14 201808" src="https://github.com/user-attachments/assets/56d49e76-14d7-47ae-a065-9744d93ffa79" />
 
+DEMO VIDEO :- 
+
+
 
 
 
@@ -79,15 +82,6 @@ The final model is chosen automatically based on the highest F1-score
 to ensure balanced detection of malicious sessions.
 
 
-📁 Project Structure:-
-
- app.py                  # Streamlit web app
- best_model_compressed.joblib
- scaler.joblib
- selected_features.joblib
- synthetic_sessions_r.csv
- requirements.txt
- README.md
 
 
 🎯 Feature Selection
